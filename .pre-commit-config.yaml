@@ -2,3 +2,11 @@
     rev: ''  # Use the sha / tag you want to point at
     hooks:
     -   id: clang-format
+    
+    repos:
+-   repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+    -   id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+        exclude: package.lock.json
